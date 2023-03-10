@@ -1,9 +1,7 @@
 ﻿#include<iostream>
 using namespace std;
 
-//#define TASK_1
-//#define TASK_2
-//#define TASK_3
+
 
 void main()
 {
@@ -13,34 +11,25 @@ void main()
 	//arr[2] = 123; //обращение к элементам массива на запись
 	//cout << arr[2] << endl; // обращение ко второму элементу массива на чтение 
 
-#ifdef TASK_1
-	const int n = 5;
-	int arr [n]{};
 	cout << "Введите элементы массива: ";
-	for (int i = 0; i < n; i++)cin >> arr [i];
-	for (int i = 0; i < n; i++)	cout << arr[i]<<" ";
-	cout << " Сумма введенная вами массива " << " = " << arr[0]+arr[1]+arr[2]+arr[3]+arr[4];
-#endif TASK_1
-
-#ifdef TASK_2
 	const int n = 5;
 	int arr[n]{};
-	cout << "Введите элементы массива: ";
-	for (int i = 0; i < n; i++)cin >> arr[i];
-	for (int i = 0; i < n; i++)	cout << arr[i] << " ";
-	cout << " Среднее арифметическая массива " << " = " << (arr[0] + arr[1] + arr[2] + arr[3] + arr[4])/5;
-#endif TASK_2
-
-#ifdef TASK_3
-	const int n = 5;
-	int arr[n]{};
-	int z;
-	int c;
-	cout << "Введите элементы массива: ";
 	for (int i = 0; i < n; i++)
 	{
 		cin >> arr[i];
 	}
+
+	int sum = 0;
+	for (int i = 0; i < n; i++)
+	{
+	sum+= arr[i];
+	}
+	cout << "Сумма введенная вами массива" << " = " << sum << endl;
+	cout << "Среднее арифмитическое" << " = " << (double)sum / n << endl;
+	int z;
+	int c;
+	cout << "Введите элементы массива: ";
+
 	z = arr[4];
 	c = arr[4];
 	for (int i = 0; i < n; i++)
@@ -49,6 +38,4 @@ void main()
 		c < arr[i] ? c : c = arr[i];	
 	}
 		cout << "Максимальный элемент массива: " << z << endl<< "Минимальный элемент массива: " << c;
-	
-#endif TASK_3
 }
