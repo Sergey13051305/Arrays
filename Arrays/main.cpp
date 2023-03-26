@@ -1,4 +1,4 @@
-#include<iostream>
+п»ї#include<iostream>
 using namespace std;
 using std::cin;
 using std::cout;
@@ -49,21 +49,21 @@ void main()
 	//UniqueRand(arr, n);
 
 	Print(arr, n);
-	cout << "Сумма элементов массива: " << Sum(arr, n) << endl;
-	cout << "Среднее арифмитическое: " << avg(arr, n) << endl;
-	cout << "Минимальное значение в массиве: " << minValueIn(arr, n) << endl;
-	cout << "Максимальное значение в массиве: " << maxValueIn(arr, n) << endl;
+	cout << "РЎСѓРјРјР° СЌР»РµРјРµРЅС‚РѕРІ РјР°СЃСЃРёРІР°: " << Sum(arr, n) << endl;
+	cout << "РЎСЂРµРґРЅРµРµ Р°СЂРёС„РјРёС‚РёС‡РµСЃРєРѕРµ: " << avg(arr, n) << endl;
+	cout << "РњРёРЅРёРјР°Р»СЊРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ РІ РјР°СЃСЃРёРІРµ: " << minValueIn(arr, n) << endl;
+	cout << "РњР°РєСЃРёРјР°Р»СЊРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ РІ РјР°СЃСЃРёРІРµ: " << maxValueIn(arr, n) << endl;
 	Search(arr, n);
 	Sort(arr, n);
 	Print(arr, n);
 
 	/*int number_of_shift;
-	cout << "Введите количество сдвигов влево: "; cin >> number_of_shift;
+	cout << "Р’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЃРґРІРёРіРѕРІ РІР»РµРІРѕ: "; cin >> number_of_shift;
 	ShiftLeft(arr, n, number_of_shift);
 	Print(arr, n);
-	cout << "Введите количество сдвигов вправо: "; cin >> number_of_shift;
+	cout << "Р’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЃРґРІРёРіРѕРІ РІРїСЂР°РІРѕ: "; cin >> number_of_shift;
 	ShiftRight(arr, n, number_of_shift);
-	Print(arr, n);*/   //Количество сдвиков влево / вправо
+	Print(arr, n);*/   //РљРѕР»РёС‡РµСЃС‚РІРѕ СЃРґРІРёРєРѕРІ РІР»РµРІРѕ / РІРїСЂР°РІРѕ
 
 	const int SIZE = 8;
 	double d_arr[SIZE];
@@ -74,15 +74,15 @@ void main()
 	int i_arr_2[ROWS][COLS];                    
 	Fillrand(i_arr_2, ROWS, COLS);
 	Print(i_arr_2, ROWS, COLS);
-	cout << "Сумма элементов массива: " << Sum(i_arr_2,ROWS, COLS) << endl;
-	cout << "Среднее арифмитическое " << avg(i_arr_2,ROWS, COLS) << endl;
+	cout << "РЎСѓРјРјР° СЌР»РµРјРµРЅС‚РѕРІ РјР°СЃСЃРёРІР°: " << Sum(i_arr_2,ROWS, COLS) << endl;
+	cout << "РЎСЂРµРґРЅРµРµ Р°СЂРёС„РјРёС‚РёС‡РµСЃРєРѕРµ " << avg(i_arr_2,ROWS, COLS) << endl;
 	Sort(i_arr_2, ROWS, COLS);
 	Print(i_arr_2, ROWS, COLS);
 }
 
 void Fillrand(int arr[], const int n, int minRand, int maxRand)
 {	
-	//rand(); // Возвращает псевдо случайное число в диапазоне от 0 до 32 767 (MAX_RAND)
+	//rand(); // Р’РѕР·РІСЂР°С‰Р°РµС‚ РїСЃРµРІРґРѕ СЃР»СѓС‡Р°Р№РЅРѕРµ С‡РёСЃР»Рѕ РІ РґРёР°РїР°Р·РѕРЅРµ РѕС‚ 0 РґРѕ 32 767 (MAX_RAND)
 	for (int i = 0; i < n; i++)
 	{
 		arr[i] = rand() % (maxRand - minRand) + minRand;
@@ -90,7 +90,7 @@ void Fillrand(int arr[], const int n, int minRand, int maxRand)
 }
 void Fillrand(double arr[], const int n)
 {
-	//rand(); // Возвращает псевдо случайное число в диапазоне от 0 до 32 767 (MAX_RAND)
+	//rand(); // Р’РѕР·РІСЂР°С‰Р°РµС‚ РїСЃРµРІРґРѕ СЃР»СѓС‡Р°Р№РЅРѕРµ С‡РёСЃР»Рѕ РІ РґРёР°РїР°Р·РѕРЅРµ РѕС‚ 0 РґРѕ 32 767 (MAX_RAND)
 	for (int i = 0; i < n; i++)
 	{
 		arr[i] = rand() % 10000;
@@ -111,7 +111,7 @@ void Fillrand(int arr[ROWS][COLS], const int ROWS, const int COLS)
 
 void Print(const int arr[], const int n)
 {
-	//Вывод массива на экран
+	//Р’С‹РІРѕРґ РјР°СЃСЃРёРІР° РЅР° СЌРєСЂР°РЅ
 	for (int i = 0; i < n; i++)
 	{
 		cout << arr[i] << "\t";
@@ -120,7 +120,7 @@ void Print(const int arr[], const int n)
 }
 void Print(const double arr[], const int n)
 {
-	//Вывод массива на экран
+	//Р’С‹РІРѕРґ РјР°СЃСЃРёРІР° РЅР° СЌРєСЂР°РЅ
 	for (int i = 0; i < n; i++)
 	{
 		cout << arr[i] << "\t";
@@ -143,7 +143,7 @@ void Print(const int arr[ROWS][COLS], const int ROWS, const int COLS)
 
 int Sum(const int arr[], const int n)
 {
-	//Вычесление суммы элементов массива
+	//Р’С‹С‡РµСЃР»РµРЅРёРµ СЃСѓРјРјС‹ СЌР»РµРјРµРЅС‚РѕРІ РјР°СЃСЃРёРІР°
 	int sum = 0;
 	for (int i = 0; i < n; i++)
 	{
@@ -169,7 +169,7 @@ double avg(const int arr[], const int n)
 	int sum = 0;
 	for (int i = 0; i < n; i++)
 	{
-		//Вычесление суммы элементов массива
+		//Р’С‹С‡РµСЃР»РµРЅРёРµ СЃСѓРјРјС‹ СЌР»РµРјРµРЅС‚РѕРІ РјР°СЃСЃРёРІР°
 		sum += arr[i];
 	}
 	return (double)sum / n;
@@ -204,14 +204,14 @@ void Sort(int arr[], const int n)
 {
 	for (int i = 0; i < n; i++)
 	{
-		//Счетчик 'i' Выбирает элемент, в который нужно поместить минимальное значение из перебираемых
+		//РЎС‡РµС‚С‡РёРє 'i' Р’С‹Р±РёСЂР°РµС‚ СЌР»РµРјРµРЅС‚, РІ РєРѕС‚РѕСЂС‹Р№ РЅСѓР¶РЅРѕ РїРѕРјРµСЃС‚РёС‚СЊ РјРёРЅРёРјР°Р»СЊРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ РёР· РїРµСЂРµР±РёСЂР°РµРјС‹С…
 		for (int i = 0; i < n; i++)
 		{
 			for (int j = i+1; j < n; j++)
 			{
-				//Счетчик "j" - перебирает элементы в поисках минимального
-				//arr[i] - Выбранный элемент
-				//arr[j] - Перебираемый элемент
+				//РЎС‡РµС‚С‡РёРє "j" - РїРµСЂРµР±РёСЂР°РµС‚ СЌР»РµРјРµРЅС‚С‹ РІ РїРѕРёСЃРєР°С… РјРёРЅРёРјР°Р»СЊРЅРѕРіРѕ
+				//arr[i] - Р’С‹Р±СЂР°РЅРЅС‹Р№ СЌР»РµРјРµРЅС‚
+				//arr[j] - РџРµСЂРµР±РёСЂР°РµРјС‹Р№ СЌР»РµРјРµРЅС‚
 				if (arr[j] < arr[i])
 				{
 					arr[i] ^= arr[j];
@@ -234,8 +234,8 @@ void Sort(int arr[ROWS][COLS], const int ROWS, const int COLS)
 			{
 				for (int l = k == i ? j + 1 : 0; l < COLS; l++)
 				{
-					//arr[i][j] - Выбранный элемент
-					//arr[k][l] - Перебираемый элемент
+					//arr[i][j] - Р’С‹Р±СЂР°РЅРЅС‹Р№ СЌР»РµРјРµРЅС‚
+					//arr[k][l] - РџРµСЂРµР±РёСЂР°РµРјС‹Р№ СЌР»РµРјРµРЅС‚
 					if (arr[k][l] < arr[i][j])
 					{
 						arr[i][j] ^= arr[k][l];
@@ -247,7 +247,7 @@ void Sort(int arr[ROWS][COLS], const int ROWS, const int COLS)
 			}
 		}
 	}
-	cout << "Массив остартироован за " << iterations << " итераций" << endl;
+	cout << "РњР°СЃСЃРёРІ РѕСЃС‚Р°СЂС‚РёСЂРѕРѕРІР°РЅ Р·Р° " << iterations << " РёС‚РµСЂР°С†РёР№" << endl;
 }
 void ShiftLeft(int arr[], const int n, int number_of_shift)
 {
@@ -295,17 +295,17 @@ void Search(int arr[], const int n)
 {
 	for (int i = 0; i < n; i++)
 	{
-		bool met_before = false; // Предположим что искомое число не втсречалось в массиве рание, но это нужно проверить
+		bool met_before = false; // РџСЂРµРґРїРѕР»РѕР¶РёРј С‡С‚Рѕ РёСЃРєРѕРјРѕРµ С‡РёСЃР»Рѕ РЅРµ РІС‚СЃСЂРµС‡Р°Р»РѕСЃСЊ РІ РјР°СЃСЃРёРІРµ СЂР°РЅРёРµ, РЅРѕ СЌС‚Рѕ РЅСѓР¶РЅРѕ РїСЂРѕРІРµСЂРёС‚СЊ
 		for (int j = 0; j < i; j++)
 		{
 			if (arr[i] == arr[j])
 			{
-				met_before = true; // Запоминаем то, что число встречалось ранее
-				break; //Прерывает текущую итерацию и все последующие итерации
+				met_before = true; // Р—Р°РїРѕРјРёРЅР°РµРј С‚Рѕ, С‡С‚Рѕ С‡РёСЃР»Рѕ РІСЃС‚СЂРµС‡Р°Р»РѕСЃСЊ СЂР°РЅРµРµ
+				break; //РџСЂРµСЂС‹РІР°РµС‚ С‚РµРєСѓС‰СѓСЋ РёС‚РµСЂР°С†РёСЋ Рё РІСЃРµ РїРѕСЃР»РµРґСѓСЋС‰РёРµ РёС‚РµСЂР°С†РёРё
 			}
 		}
-		if (met_before)continue; // Прерывает текущую итерацию, и переходит к следующей.
-		int count = 0; // Счетчик повторений
+		if (met_before)continue; // РџСЂРµСЂС‹РІР°РµС‚ С‚РµРєСѓС‰СѓСЋ РёС‚РµСЂР°С†РёСЋ, Рё РїРµСЂРµС…РѕРґРёС‚ Рє СЃР»РµРґСѓСЋС‰РµР№.
+		int count = 0; // РЎС‡РµС‚С‡РёРє РїРѕРІС‚РѕСЂРµРЅРёР№
 		for (int j = i + 1; j < n; j++)
 		{
 			if (arr[i] == arr[j])
@@ -313,7 +313,7 @@ void Search(int arr[], const int n)
 				count++;
 			}
 		}
-		if (count)printf("Значение %i повторяется %i раз \n", arr[i], count);
-		//if (count)cout << "Значение " << arr[i] << " Повторяется " << count << " раз" << endl;
+		if (count)printf("Р—РЅР°С‡РµРЅРёРµ %i РїРѕРІС‚РѕСЂСЏРµС‚СЃСЏ %i СЂР°Р· \n", arr[i], count);
+		//if (count)cout << "Р—РЅР°С‡РµРЅРёРµ " << arr[i] << " РџРѕРІС‚РѕСЂСЏРµС‚СЃСЏ " << count << " СЂР°Р·" << endl;
 	}
 }
