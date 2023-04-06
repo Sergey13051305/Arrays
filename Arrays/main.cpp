@@ -1,5 +1,5 @@
 ﻿#include<iostream>
-#define delimiter "\n---------------------------------------------------\n"
+#define delimiter "\n----------------------------------------------------\n"
 using namespace std;
 using std::cin;
 using std::cout;
