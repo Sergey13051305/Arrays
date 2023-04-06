@@ -685,9 +685,9 @@ void ShiftLeft(const int arr[ROWS][COLS], const int ROWS, const int COLS, int nu
 		int buffer = 0;
 		for (int j = 0; j < COLS - 1; j++) 
 		{
-			arr[i][j] = arr[i][j + 1];
+			//arr[i][j] = arr[i][j + 1];
 		}
-		arr[i][COLS - 1] = buffer;
+		//arr[i][COLS - 1] = buffer;
 	}
 }
 
