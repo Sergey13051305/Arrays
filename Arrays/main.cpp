@@ -11,7 +11,7 @@
 #define arrays_2
 
 void main()
-{
+{ 
 	setlocale(LC_ALL, "");
 
 #ifdef arrays_1
