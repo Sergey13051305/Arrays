@@ -5,6 +5,7 @@
 #include "Statistics.cpp"
 #include "Sort.cpp"
 #include "Shifts.cpp"
+
 void main()
 {
 	setlocale(LC_ALL, "");
