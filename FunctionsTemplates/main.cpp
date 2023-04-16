@@ -6,15 +6,17 @@ const int COLS = 4;
 
 void FillRand(int arr[], const int n);
 void FillRand(double arr[], const int n);
-void FillRand(char arr[], const int n);
+
 void FillRand(int arr[ROWS][COLS], const int ROWS, const int COLS);
 
 template<typename T>void Print(const T arr[], const int n);
 template<typename T>void Print(const T arr[ROWS][COLS], const int ROWS, const int COLS);
 
 template<typename T>T Sum(const T arr[], const int n);
-template<typename T>T Avg(const T arr[], const int n);
 
+unsigned int Sum(const unsigned char arr[], const int n);
+
+template<typename T>double Avg(const T arr[], const int n);
 template<typename T>T minValueIn(const T arr[], const int n);
 template<typename T>T maxValueIn(const T arr[], const int n);
 
@@ -26,6 +28,7 @@ template<typename T>void shiftRight(T arr[], const int n, int number_of_shifts);
 void main()
 {
 	setlocale(LC_ALL, "");
+	cout << (int)'б' << endl;
 	const int n = 10;
 	int arr[n] = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
 	FillRand(arr, n);
@@ -45,23 +48,24 @@ void main()
 	Print(arr, n);*/
 
 	const int SIZE = 8;
-	char c_arr[SIZE];
-	FillRand(c_arr, SIZE);
-	Print(c_arr, SIZE);
-	cout << "Сумма элементов массива: " << Sum(c_arr, SIZE) << endl;
-	cout << "Среднее арифметическое элементов массива: " << Avg(c_arr, SIZE) << endl;
-	cout << "Минимальное значение в массиве: " << minValueIn(c_arr, SIZE) << endl;
-	cout << "Максимальное значение в массиве: " << maxValueIn(c_arr, SIZE) << endl;
-	Sort(c_arr, SIZE);
-	Print(c_arr, SIZE);
+	double d_arr[SIZE];
+	FillRand(d_arr, SIZE);
+	Print(d_arr, SIZE);
+	cout << "Сумма элементов масива: " << Sum(d_arr, SIZE) << endl;
+	cout << "Среднее-арифметическое элементов масива: " << Avg(d_arr, SIZE) << endl;
+	cout << "Минимальное значение в массиве: " << minValueIn(d_arr, SIZE) << endl;
+	cout << "Максимальное значение в массиве: " << maxValueIn(d_arr, SIZE) << endl;
+	Sort(d_arr, SIZE);
+	Print(d_arr, SIZE);
 
 	int number_of_shifts;
 	cout << "Введите количество сдвигов влево: "; cin >> number_of_shifts;
-	shiftLeft(c_arr, SIZE, number_of_shifts);
-	Print(c_arr, SIZE);
+	shiftLeft(d_arr, SIZE, number_of_shifts);
+	Print(d_arr, SIZE);
+
 	cout << "Введите количество сдвигов вправо: "; cin >> number_of_shifts;
-	shiftRight(c_arr, SIZE, number_of_shifts);
-	Print(c_arr, SIZE);
+	shiftRight(d_arr, SIZE, number_of_shifts);
+	Print(d_arr, SIZE);
 
 	int i_arr_2[ROWS][COLS];
 	FillRand(i_arr_2, ROWS, COLS);
@@ -85,16 +89,6 @@ void FillRand(double arr[], const int n)
 	}
 }
 
-
-void FillRand(char arr[], const int n)
-{
-	//rand();	//возвращает псевдослучайное число в диапазоне от 0 до 32 767 (MAX_RAND)
-	for (int i = 0; i < n; i++)
-	{
-		arr[i] = rand();
-	}
-}
-
 void FillRand(int arr[ROWS][COLS], const int ROWS, const int COLS)
 {
 	for (int i = 0; i < ROWS; i++)
@@ -115,7 +109,6 @@ template<typename T>void Print(const T arr[], const int n)
 	}
 	cout << endl;
 }
-
 template<typename T>void Print(const T arr[ROWS][COLS], const int ROWS, const int COLS)
 {
 	for (int i = 0; i < ROWS; i++)
@@ -126,16 +119,6 @@ template<typename T>void Print(const T arr[ROWS][COLS], const int ROWS, const in
 		}
 		cout << endl;
 	}
-}
-
-void Print(const double arr[], const int n)
-{
-	//Вывод массива на экран:
-	for (int i = 0; i < n; i++)
-	{
-		cout << arr[i] << "\t";
-	}
-	cout << endl;
 }
 
 template<typename T>T Sum(const T arr[], const int n)
@@ -149,7 +132,19 @@ template<typename T>T Sum(const T arr[], const int n)
 	return sum;
 }
 
-template<typename T>T Avg(const T arr[], const int n)
+unsigned int Sum(const unsigned char arr[], const int n)
+{
+	//Вычисление суммы элементов массива:
+	unsigned int sum = 0;
+	for (int i = 0; i < n; i++)
+	{
+		sum += arr[i];
+	}
+	return sum;
+}
+
+
+template<typename T>double Avg(const T arr[], const int n)
 {
 	return (double)Sum(arr, n) / n;
 }
@@ -187,11 +182,11 @@ template<typename T>void Sort(T arr[], const int n)
 				T buffer = arr[i];
 				arr[i] = arr[j];
 				arr[j] = buffer;
-
 			}
 		}
 	}
 }
+
 template<typename T>void shiftLeft(T arr[], const int n, int number_of_shifts)
 {
 	for (int i = 0; i < number_of_shifts; i++)
@@ -204,7 +199,6 @@ template<typename T>void shiftLeft(T arr[], const int n, int number_of_shifts)
 		arr[n - 1] = buffer;
 	}
 }
-
 template<typename T>void shiftRight(T arr[], const int n, int number_of_shifts)
 {
 	/*for (int i = 0; i < number_of_shifts; i++)
